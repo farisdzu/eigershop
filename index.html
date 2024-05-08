@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</head>
+
+
+<style>
+    .running-text {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: running-text 10s linear infinite;
+    }
+
+    @keyframes running-text {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+
+<body>
+    <section>
+
+        <div class="flex flex-wrap place-items-center ">
+            <section class="relative mx-auto">
+                <!-- navbar -->
+                <nav class="flex justify-between bg-slate-50 text-black w-screen">
+                    <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+                        <a class="text-3xl font-bold row flex" href="#">
+                            <img class="h-9" src="eg1.png" alt="logo">
+                            <p class="ml-2">Eiger</p>
+                        </a>
+                        <!-- Nav Links -->
+                        <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                            <li><a class="hover:text-gray-700" href="#">Home</a></li>
+                            <li><a class="hover:text-gray-700" href="#">Shop</a></li>
+                            <li><a class="hover:text-gray-700" href="#">Collections</a></li>
+                            <li><a class="hover:text-gray-700" href="#">Favorite</a></li>
+                        </ul>
+                        <!-- Header Icons -->
+                        <div class="hidden xl:flex items-center space-x-5 items-center">
+                            <a class="hover:text-gray-200" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </a>
+                            <a class="flex items-center hover:text-gray-200" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                <span class="flex absolute -mt-5 ml-4">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+                                    </span>
+                                </span>
+                            </a>
+                            <!-- Sign In / Register      -->
+                            <a class="flex items-center hover:text-gray-200" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- Responsive navbar -->
+                    <a class="xl:hidden flex mr-6 items-center" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span class="flex absolute -mt-5 ml-4">
+                            <span
+                                class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+                            </span>
+                        </span>
+                    </a>
+                    <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </a>
+                </nav>
+
+            </section>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="bg-center bg-no-repeat bg-cover bg-[url('')] ">
+        <div class="px-4 h-screen mx-auto max-w-screen-xl text-center flex items-center justify-center flex-col ">
+            <div class="w-full h-fit py-4 flex justify-center items-center ">
+                <img class="w-40 " src="eg1.png" alt="">
+            </div>
+            <h1 class="mb-4  font-extrabold  leading-none  text-black white md:text-6xl sm:text-4xl ">
+                EIGER ADVENTURE</h1>
+            <p class="mb-8 text-lg font-normal text-black lg:text-xl sm:px-16 lg:px-48">Explore this world
+                comfortably and safely with eiger advanture. </p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                <a href="#"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-black duration-300 hover:bg-[#DA4334] focus:ring-4 focus:ring-blue-300 ">
+                    Find Your Item
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+                <a href="#"
+                    class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black hover:bg-[#00000011] focus:ring-4 focus:ring-gray-400">
+                    Learn more
+                </a>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+    <section>
+        <div class="jdl w-screen  flex px-8 ">
+            <h1 class="px-5 py-1 bg-black border-2 border-black text-white mb-9 ">Item Colection</h1>
+        </div>
+        <div class=" p-4 rounded grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+            <div class=" h-24 py-2 p-4 rounded-xl flex">
+                <div class="w-28 ">
+                    <img src="1.png" alt="Image" class="w-20 object-contain mb-4 rounded">
+                </div>
+                <div class="ml-4 w-full h-24 flex-col items-center center">
+                    <h2 class="text-xl font-bold mb-2">Bag</h2>
+                    <p class="text-gray-600">All type</p>
+                </div>
+            </div>
+            <div class=" h-24 py-2 p-4 rounded-xl flex">
+                <div class="w-28 ">
+                    <img src="2.png" alt="Image" class="w-20 object-contain mb-4 rounded">
+                </div>
+                <div class="ml-4 w-full h-24 flex-col items-center center">
+                    <h2 class="text-xl font-bold mb-2">T-Shirt</h2>
+                    <p class="text-gray-600">All type</p>
+                </div>
+            </div>
+            <div class=" h-24 py-2 p-4 rounded-xl flex">
+                <div class="w-28 ">
+                    <img src="3.png" alt="Image" class="w-20 object-contain mb-4 rounded">
+                </div>
+                <div class="ml-4 w-full h-24 flex-col items-center center">
+                    <h2 class="text-xl font-bold mb-2">Watch</h2>
+                    <p class="text-gray-600">All type</p>
+                </div>
+            </div>
+            <div class=" h-24 py-2 p-4 rounded-xl flex">
+                <div class="w-28 ">
+                    <img src="4.png" alt="Image" class="w-20 object-contain mb-4 rounded">
+                </div>
+                <div class="ml-4 w-full h-24 flex-col items-center center">
+                    <h2 class="text-xl font-bold mb-2">Sliper</h2>
+                    <p class="text-gray-600">All type</p>
+                </div>
+            </div>
+            <div class=" h-24 py-2 p-4 rounded-xl flex">
+                <div class="w-28 ">
+                    <img src="5.png" alt="Image" class="w-20 object-contain mb-4 rounded">
+                </div>
+                <div class="ml-4 w-full h-24 flex-col items-center center">
+                    <h2 class="text-xl font-bold mb-2">Pants</h2>
+                    <p class="text-gray-600">All type</p>
+                </div>
+            </div>
+            <div class=" h-24 py-2 p-4 rounded-xl flex">
+                <div class="w-28 ">
+                    <img src="6.png" alt="Image" class="w-20 object-contain mb-4 rounded">
+                </div>
+                <div class="ml-4 w-full h-24 flex-col items-center center">
+                    <h2 class="text-xl font-bold mb-2">Shirt</h2>
+                    <p class="text-gray-600">All type</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <section class="w-screen h-full py-16 flex flex-col items-center justify-center">
+        <div class=" jdl w-screen  flex px-8 ">
+            <h1 class="px-5 py-1 bg-black border-2 border-black text-white mb-9 ">Favorite Colection</h1>
+
+
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-8">
+            <div class="tem">
+                <div class="w-auto  bg-white  rounded-lg hover:border hover:shadow  duration-150">
+                    <a href="#">
+                        <img class="p rounded-t-lg"
+                            src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/ec8286bd-38ab-4816-abe4-18299d22c25f.jpg"
+                            alt="product image" />
+                    </a>
+                    <div class="px-5 pb-5">
+                        <a href="#">
+                            <h5 class="text-xs font-bold   text-[#DA4334]">100+ sold</h5>
+                            <h5 class="text xs font-semibold tracking-tight text-gray-900">AJR MOORLAND STRIPE LS TEES
+                            </h5>
+                            <h5 class="text-x font-light  text-gray-700">Appare Atasan</h5>
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 mt-11">Rp179.000</h5>
+
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="tem">
+                <div class="w-auto  bg-white  rounded-lg hover:border hover:shadow  duration-150">
+                    <a href="#">
+                        <img class="p rounded-t-lg"
+                            src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/5121444b-3379-4b42-96fd-0a5b53bec36d.jpg"
+                            alt="product image" />
+                    </a>
+                    <div class="px-5 pb-5">
+                        <a href="#">
+                            <h5 class="text-xs font-bold   text-[#DA4334]">900+ sold</h5>
+                            <h5 class="text xs font-semibold tracking-tight text-gray-900">NORTE SLIDER 1.0
+                            </h5>
+                            <h5 class="text-x font-light  text-gray-700">Alas Kaki</h5>
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 mt-11">Rp234.000</h5>
+
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="tem">
+                <div class="w-auto  bg-white  rounded-lg hover:border hover:shadow  duration-150">
+                    <a href="#">
+                        <img class="p rounded-t-lg"
+                            src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/bc89912e-d530-4ed5-a6ed-e488a4b3296f.jpg"
+                            alt="product image" />
+                    </a>
+                    <div class="px-5 pb-5">
+                        <a href="#">
+                            <h5 class="text-xs font-bold   text-[#DA4334]">100+ sold</h5>
+                            <h5 class="text xs font-semibold tracking-tight text-gray-900">ROADWAY 12L
+                            </h5>
+                            <h5 class="text-x font-light  text-gray-700">Tas Punggung</h5>
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 mt-11">Rp519.000</h5>
+
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="tem">
+                <div class="w-auto  bg-white  rounded-lg hover:border hover:shadow  duration-150">
+                    <a href="#">
+                        <img class="p rounded-t-lg"
+                            src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/ec8286bd-38ab-4816-abe4-18299d22c25f.jpg"
+                            alt="product image" />
+                    </a>
+                    <div class="px-5 pb-5">
+                        <a href="#">
+                            <h5 class="text-xs font-bold   text-[#DA4334]">500+ sold</h5>
+                            <h5 class="text xs font-semibold tracking-tight text-gray-900">AJR MOORLAND STRIPE LS TEES
+                            </h5>
+                            <h5 class="text-x font-light  text-gray-700">Appare Atasan</h5>
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 mt-11">Rp179.000</h5>
+
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="w-screen h-full py-20  px-20 md:px-10  flex justify-center items-center flex-col">
+            <h1 class="text-5xl font-bold mt-9 text-center">EIGER ADVENTURE</h1>
+            <h1 class=" text-center"> All the comfort of travel is on the eiger</h1>
+
+
+            <div class="flex items-center justify-center py-4 md:py-8 flex-wrap">
+                <button type="button"
+                    class="text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800">All
+                    categories</button>
+                <button type="button"
+                    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Shoes</button>
+                <button type="button"
+                    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Bags</button>
+                <button type="button"
+                    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">T-shirt</button>
+                <button type="button"
+                    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Camping
+                    Tent</button>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/122ec478-6660-4159-943b-abb1efa6a75e.jpg"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/15eb8d24-cea5-4067-8e0e-b9ed23378397.jpg"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/79f22290-5a89-4979-9424-0ae7adc9f012.jpg"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/9aab4fba-95b6-483b-99f9-cb4d01429725.jpg"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/ab62c804-e335-416f-b3be-1de0d4aa3263.jpg"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/media/web/910007232_BROWN_1_8934.webp"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/706888fc-1d5f-4a93-a567-bdbfc13b899b.jpg"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/media/web/910005812_DARK%20GREY_1_e4ff.webp"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/media/web/910006947_GREY_1_c64b.webp"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/6a818a66-8649-4bd6-8795-eca7f2769160.jpg"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/27ebe299-fa34-4981-8b72-5317f162a097.jpg"
+                        alt="">
+                </div>
+                <div class="shadow-xl rounded-xl">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://d1yutv2xslo29o.cloudfront.net/product/variant/media/web/aff4069e-5bba-45a0-af15-742170a4d2ff.webp"
+                        alt="">
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+    <section class="">
+        <div class="mx-auto max-w-md sm:max-w-lg md:max-w-screen-xl">
+            <div class="px-4 py-8 md:px-6 md:py-12 lg:px-20">
+                <h1 class="text-center text-3xl font-semibold text-gray-800 lg:text-4xl">Our Best Selling Collection
+                </h1>
+
+                <div class="mt-8 grid grid-cols-1 gap-6 md:mt-10 md:grid-cols-3 lg:gap-8">
+
+                    <article class="bg-slate-50  p-8">
+                        <div class="">
+                            <h2 class="text-xl text-gray-600">MENS SLIPER</h2>
+                            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+                        </div>
+                        <div class="mt-8 flex-col items-center justify-center md:mt-24">
+                            <img class=""
+                                src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/8c9052ef-c629-4ef0-813b-66cf81a8fb5b.jpg"
+                                alt="" />
+                            <h1 class="mt-3">Rp 341.000,00</h1>
+                        </div>
+                    </article>
+
+                    <article class="bg-slate-50 p-8">
+                        <div class="">
+                            <h2 class="text-xl text-gray-600">CARRIER X298 TERX</h2>
+                            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+                        </div>
+                        <div class="mt-8 flex-col items-center justify-center md:mt-24">
+                            <img class=""
+                                src="https://d1yutv2xslo29o.cloudfront.net/product/variant/media/web/910009354_Image1_1_fcd2.webp"
+                                alt="" />
+                            <h1 class="mt-3">Rp 2.847.000,00</h1>
+                        </div>
+                    </article>
+
+                    <article class="bg-slate-50 p-8">
+                        <div class="">
+                            <h2 class="text-xl text-gray-600">MAMBA MID</h2>
+                            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+                        </div>
+                        <div class="mt-8 flex-col items-center justify-center md:mt-24">
+                            <img src="https://d1yutv2xslo29o.cloudfront.net/product/variant/media/web/910008377_Image1_1_b038.webp"
+                                alt="" />
+                            <h1 class="mt-3">Rp 1.247.000,00</h1>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="mt-4 grid grid-cols-1 gap-5 md:mt-6 md:grid-cols-2 md:gap-6 lg:mt-8 lg:gap-8">
+
+                    <article class="bg-slate-50 p-8">
+                        <div>
+                            <h2 class="text-xl text-gray-600">MERCURY ABC WATCH 1.0</h2>
+                            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+                        </div>
+                        <div class="mt-28 flex-COL items-center justify-center md:mt-3">
+                            <img src="https://d1yutv2xslo29o.cloudfront.net/product/variant/media/web/910008541_NO%20COLOUR_1_3f75.webp"
+                                alt="" />
+                            <h1 class="mt-3">Rp 974.000,00</h1>
+                        </div>
+                    </article>
+
+                    <article class="bg-slate-50 p-8">
+                        <div>
+                            <h2 class="text-xl text-gray-600">WS IRVINE RAINY CAPS</h2>
+                            <p class="mt-2 text-xl font-semibold text-gray-800"></p>
+                        </div>
+                        <div class="mt-28 flex-COL items-center justify-center md:mt-1">
+                            <img src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/0f6e7f43-f9e6-4569-9dc3-2bd70c749366.jpg"
+                                alt="" />
+                            <h1 class="mt-3">Rp 259.000,00</h1>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+    <!-- footter -->
+    <section>
+
+
+        <footer class="bg-white">
+            <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                <div class="md:flex md:justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <a href="https://flowbite.com/" class="flex items-center mb-2">
+                            <img src="eg1.png" class="h-8 me-3" alt="FlowBite Logo" />
+                            <span class="self-center text-2xl font-semibold whitespace-nowrap">Eiger</span>
+                        </a>
+                        <a href="" class="flex-col w-1/2 ">
+
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
+                            <ul class="text-gray-500 font-medium">
+                                <li class="mb-4">
+                                    <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                                </li>
+                                <li>
+                                    <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h2>
+                            <ul class="text-gray-500 font-medium">
+                                <li class="mb-4">
+                                    <a href="https://github.com/themesberg/flowbite"
+                                        class="hover:underline ">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Youtube</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
+                            <ul class="text-gray-500 font-medium">
+                                <li class="mb-4">
+                                    <a href="#" class="hover:underline">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-6 border-gray-200 sm:mx-auto" />
+                <div class="sm:flex sm:items-center sm:justify-between">
+                    <span class="text-sm text-gray-500 sm:text-center">© 2023 <a href="https://flowbite.com/"
+                            class="hover:underline">Eiger™</a>. All Rights Reserved.
+                    </span>
+                    <div class="flex mt-4 sm:justify-center sm:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 8 19">
+                                <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.59
+
+    </section>
+
+
+
+
+   
+
+
+
+
+</body>
+
+</html>
